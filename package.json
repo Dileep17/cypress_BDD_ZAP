@@ -1,0 +1,24 @@
+{
+  "name": "cypress_bdd_zap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dileep17/cypress_BDD_ZAP.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dileep17/cypress_BDD_ZAP/issues"
+  },
+  "homepage": "https://github.com/Dileep17/cypress_BDD_ZAP#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "cypress": "^4.4.1",
+    "cypress-cucumber-preprocessor": "^2.3.1"
+  }
+}
