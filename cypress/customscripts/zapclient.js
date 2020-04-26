@@ -44,6 +44,13 @@ async function initForScan(){
         resp => console.log("created ascan policy: " + JSON.stringify(resp)),
         err => console.log('Failed to create ascan policy: ' + err.message)
     );
+
+    await zaproxy.pscan.setScanOnlyInScope(true)
+    .then(
+        resp => console.log("PScan URLS Only InScope: " + JSON.stringify(resp)),
+        err => console.log('Failed to set PScan URLS Only InScope: ' + err.message)
+    );
+
     return null;
 }
 
