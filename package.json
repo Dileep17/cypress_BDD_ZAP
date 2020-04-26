@@ -18,7 +18,9 @@
   "homepage": "https://github.com/Dileep17/cypress_BDD_ZAP#readme",
   "devDependencies": {},
   "dependencies": {
+    "async-wait-until": "^1.2.4",
     "cypress": "^4.4.1",
-    "cypress-cucumber-preprocessor": "^2.3.1"
+    "cypress-cucumber-preprocessor": "^2.3.1",
+    "zaproxy": "^1.0.1"
   }
 }
