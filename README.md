@@ -29,7 +29,12 @@ steps:-
 2. update the zap proxy url and api key
 3. update the incRegex in zapconfig > AutomatedContext.context
 4. udpate baseurl in cypress.json
-5. Run cypress,
+5. set proxy env variable so that cypress can pick up the proxy url
+    ```
+    export HTTP_PROXY=http://127.0.0.0:8091
+    ```
+    make sure port number given for HTTP_PROXY is the port set in zap proxy
+6. Run cypress,
     ```
     ./node_modules/.bin/cypress open 
     ```
@@ -37,6 +42,6 @@ steps:-
     ```
     ./node_modules/.bin/cypress run
     ```
-6. Scan reports are written to zapreport folder
+7. Scan reports are written to zapreport folder
 
 
