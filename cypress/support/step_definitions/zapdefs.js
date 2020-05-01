@@ -10,4 +10,5 @@ When("Active scan is triggered", () => {
 
 Then("Report should be generated", () => {
     cy.task("generateReports");
+    cy.task("generateCustomReports");
 });

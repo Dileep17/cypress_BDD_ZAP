@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <style>
+            body {
+                font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            }
+
+            .alert{
+                border-style: solid;
+            }
+
+            .collapsible {
+            background-color: #777;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 97%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            }
+
+            .active, .collapsible:hover {
+            background-color: #555;
+            }
+
+            .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+            }
+
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            
+            td, th {
+                border: none;
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #4CAF50;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <h2> Alerts </h2>
+        <div id="alertInfo"> 
+            <!--context-->
+        </div>
+        <script>
+                var coll = document.getElementsByClassName("collapsible");
+                var i;
+                
+                for (i = 0; i < coll.length; i++) {
+                    coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                    });
+                }
+        </script>
+    </body>
+
+<html>
