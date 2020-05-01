@@ -38,7 +38,6 @@
             }
             
             td, th {
-                border: none;
                 border: 1px solid #ddd;
                 padding: 8px;
             }
@@ -53,9 +52,12 @@
         </style>
     </head>
     <body>
-        <h2> Alerts </h2>
         <div id="alertInfo"> 
             <!--context-->
+        </div>
+        <div>
+            <p> * This is report generated after supressing alters set in zapreport/AlertSupressionList.json </p>
+            <p> * To mark an alert instance as false positive and supress it in next custom ZAP report, add the alert instance url to array with respective alert ID key in zapreport/AlertSupressionList.json. </p>
         </div>
         <script>
                 var coll = document.getElementsByClassName("collapsible");

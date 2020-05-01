@@ -4,8 +4,8 @@
         <name>AutomatedContext</name>
         <desc/>
         <inscope>true</inscope>
-        <incregexes>http.*://owsapjuiceshop.herokuapp.com/.*</incregexes>
-        <excregexes>^(?:(?!http.*://owsapjuiceshop.herokuapp.com).*).$</excregexes>
+        <incregexes>http.*://owsapjuiceshopapp.herokuapp.com/.*</incregexes>
+        <excregexes>^(?:(?!http.*://owsapjuiceshopapp.herokuapp.com).*).$</excregexes>
         <excregexes>.*google.com</excregexes>
         <tech>
             <include>Db.MySQL</include>

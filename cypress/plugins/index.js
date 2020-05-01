@@ -25,7 +25,7 @@ module.exports = (on, config) => {
 
   on('task', {
     generateCustomReports () {
-      return htmlReportGenerator.parseJsonAndGenerateReport();
+      return htmlReportGenerator.parseJsonAndGenerateReport(true);
     }
   })
 

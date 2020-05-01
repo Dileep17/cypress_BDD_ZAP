@@ -1,4 +1,4 @@
 {
     "testFiles": "**/*.feature",
-    "baseUrl": "http://owsapjuiceshop.herokuapp.com"
+    "baseUrl": "http://owsapjuiceshopapp.herokuapp.com"
 }
