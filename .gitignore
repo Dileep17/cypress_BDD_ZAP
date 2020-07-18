@@ -1,3 +1,8 @@
+cypress/videos/
+zapreport/*.html
+zapreport/*.json
+.DS_Store
+
 # Logs
 logs
 *.log

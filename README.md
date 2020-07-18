@@ -34,7 +34,7 @@ steps:-
 4. udpate baseurl in cypress.json
 5. set proxy env variable so that cypress can pick up the proxy url
     ```
-    export HTTP_PROXY=http://127.0.0.0:8091
+    export HTTP_PROXY=http://127.0.0.1:8091
     ```
     make sure port number given for HTTP_PROXY is the port set in zap proxy
 6. Run cypress,

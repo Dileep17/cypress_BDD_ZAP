@@ -5,8 +5,8 @@
         <desc/>
         <inscope>true</inscope>
         <incregexes>http.*://owsapjuiceshopapp.herokuapp.com/.*</incregexes>
-        <excregexes>^(?:(?!http.*://owsapjuiceshopapp.herokuapp.com).*).$</excregexes>
         <excregexes>.*google.com</excregexes>
+        <excregexes>.*socket.io.*</excregexes>
         <tech>
             <include>Db.MySQL</include>
             <include>Language.Java</include>
