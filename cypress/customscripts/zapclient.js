@@ -99,7 +99,7 @@ async function pollProgressOfAscan(scanId){
 }
 
 function sleep(ms) {
-    return new Promise(resolve => setTimeout0(resolve, ms));
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 async function generateReports(){
