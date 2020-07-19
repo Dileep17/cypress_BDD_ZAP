@@ -1,13 +1,21 @@
 {
-    "10098" :[
-        "http://owsapjuiceshopapp.herokuapp.com/api/BasketItems/1",
-        "http://google.com",
-        "http://owsapjuiceshopapp.herokuapp.com/runtime-es2015.js"
+    "10037" :[
+        {
+            "uri": "https://owsapjuiceshopapp.herokuapp.com/font-mfizz.woff",
+            "method": "GET",
+            "evidence": "X-Powered-By: Express"
+        },
+        {
+            "uri": "https://owsapjuiceshopapp.herokuapp.com/api/BasketItems/1",
+            "method": "PUT",
+            "evidence": "X-Powered-By: Express"
+        }
     ],
-    "2":[
-        "http://owsapjuiceshopapp.herokuapp.com/rest/admin/application-configuration"
-    ],
-    "3":[
-        "http://owsapjuiceshopapp.herokuapp.com/socket.io/?EIO=3&transport=websocket&sid=15hIyFSmgZN-w0ePAAbL"
+    "10015": [
+        {
+            "uri": "https://owsapjuiceshopapp.herokuapp.com/rest/products/search?q=",
+            "method": "GET",
+            "param": "Cache-Control"
+        }
     ]
 }   

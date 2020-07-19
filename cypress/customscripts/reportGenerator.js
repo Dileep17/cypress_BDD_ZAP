@@ -2,23 +2,20 @@ const fs = require('fs')
 const path = require('path')
 
 
-function getUrlsSupressedForAlert(alertId){
+function getSupressedListForAlert(alertId){
     let supressionList = require(path.resolve(process.cwd(), "zapconfig/AlertSupressionList.json"));
     return supressionList[alertId];
 }
 
-function isURLSupressedForAlert(urlSupressedForListAlert, url, suppressAlerts){
+function isURLSupressedForAlert(supressedListForListAlert, url, method){
     console.log("isURLSupressedForAlert")
-    if(!urlSupressedForListAlert)
-        return false;
-
-    if(!suppressAlerts)
+    if(!supressedListForListAlert)
         return false;
 
     let supressed = false;
 
-    for(var i = 0; i < urlSupressedForListAlert.length; i++){
-        if(urlSupressedForListAlert[i] === url){
+    for(var i = 0; i < supressedListForListAlert.length; i++){
+        if(supressedListForListAlert[i].uri === url && supressedListForListAlert[i].method === method){
             supressed = true;
             break;
         }
@@ -54,7 +51,7 @@ function getColorBasedOnLevel(levelId){
       }
 }
 
-function parseJsonAndGenerateReport(checkSupression){
+function parseJsonAndGenerateReport(){
     let jsonData = require(path.resolve(process.cwd(), "zapreport/zapReport.json"));
     let alertHTMLGenerated = "<table><tbody>";
     alertHTMLGenerated = alertHTMLGenerated + "<tr style='border: none;'>"; 
@@ -69,11 +66,10 @@ function parseJsonAndGenerateReport(checkSupression){
     jsonData.site.forEach(function(site) {
          let siteHTMLAlertContext = "";
          site.alerts.forEach(function(alert){    
-            let urlsSupressedForAlert = getUrlsSupressedForAlert(alert.pluginid);
-            console.log("urlsSupressedForAlert **:" + urlsSupressedForAlert);
+            let supressedListForAlert = getSupressedListForAlert(alert.pluginid);
             let instanceHTMLContext = "";
             alert.instances.forEach(function(instance){
-                if(!isURLSupressedForAlert(urlsSupressedForAlert, instance.uri, checkSupression)){
+                if(!isURLSupressedForAlert(supressedListForAlert, instance.uri, instance.method)){
                     let instanceHTML = "<tr><td colspan='2'>";
                     instanceHTML = instanceHTML + "<button type='button' class='collapsible' style='background-color: "+ getColorBasedOnLevel(alert.riskcode) +"'>" + instance.uri +"</button>";
                     instanceHTML = instanceHTML + "<div class='content'><table>";
@@ -91,7 +87,7 @@ function parseJsonAndGenerateReport(checkSupression){
                 alertHTML = alertHTML + "<div>" + alert.name + "</div>";
                 alertHTML = alertHTML + "</div>";
                 alertHTML = alertHTML + "<div class='content'><table>"; 
-                alertHTML = alertHTML + "<tr><td>Alert ID</td><td>" + alert.pluginid + "</td></tr>";
+                alertHTML = alertHTML + "<tr><td>Alert ID / Plugin ID</td><td>" + alert.pluginid + "</td></tr>";
                 alertHTML = alertHTML + "<tr><td>Risk Level</td><td>" + getLevelBaseOnId(alert.riskcode) + "</td></tr>";
                 alertHTML = alertHTML + "<tr><td>Confidence Level</td><td>" + getLevelBaseOnId(alert.confidence) + "</td></tr>"; 
                 alertHTML = alertHTML + "<tr><td>Description</td><td>" + alert.desc + "</td></tr>";
